@@ -19,6 +19,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.PORT }}
           source: "."
           target: "/home/admin/app"
 
@@ -28,6 +29,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.PORT }}
           script: |
             cat > /home/admin/app/.env << EOF
             SECRET_DATA=${{ secrets.SECRET_DATA }}
@@ -39,6 +41,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.PORT }}
           script: |
             cd /home/admin/app
             docker compose up -d --build
