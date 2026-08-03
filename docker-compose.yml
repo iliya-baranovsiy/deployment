@@ -1,0 +1,15 @@
+services:
+    backend:
+        build: ./back-end
+        expose:
+            - "8000"
+    
+    nginx:
+        build: ./nginx
+        ports:
+            - "80:80"
+            - "443:443"
+        volumes:
+            - /etc/letsencrypt:/etc/letsencrypt:ro
+        depends_on:
+            - backend
