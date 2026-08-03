@@ -44,4 +44,4 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             cd /home/admin/app
-            docker compose up -d --build
+            docker-compose up -d --build
