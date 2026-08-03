@@ -26,4 +26,4 @@ app.add_middleware(
 
 @router.get("/")
 async def get_hello():
-    return {"message": "hello !", "key": {conf.secret_data}, "after deploy": "deploy"}
+    return {"message": "hello !", "key": {conf.secret_dataq}, "after deploy": f"deploy {1 + "test"}"}
